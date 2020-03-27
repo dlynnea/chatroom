@@ -19,6 +19,11 @@ io.on('connection', socket => {
     //runs when client disconnects
     socket.on('disconnect', () => {
         io.emit('message', 'A user has just left the chat')
+    });
+
+    //listen for chat message
+    socket.on('chatMessage', (message) => {
+        io.emit('message', message);
     })
 });
 
