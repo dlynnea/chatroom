@@ -2,31 +2,30 @@ const path = require('path');
 const http = require('http');
 const express = require('express');
 const socketio = require('socket.io');
-const formatMessage = require('./utilities/messages')
-const { newUser, currentUser, userLeaves, allUsers } = require('./utilities/users')
+const formatMessage = require('./chatApp/utilities/messages')
+const { newUser, currentUser, userLeaves, allUsers } = require('./chatApp/utilities/users')
 
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
-const bot = 'Chatter-Bot';
-// set static folder
+const bot = 'Crafty-Bot';
+
 app.use(express.static(path.join(__dirname, 'chatApp')));
 
-// run when client connects
 io.on('connection', socket => {
     socket.on('join', ({ username, room }) => {
         const user = newUser(socket.id, username, room)
         socket.join(user.room)
-        socket.emit('message', formatMessage(bot, 'Welcome to Chatter'));
-        socket.broadcast.to(user.room).emit('message', formatMessage(bot, `${user.username} has joined!`));
+        socket.emit('message', formatMessage(bot, 'Welcome to Craft Chat'));
+        socket.broadcast.to(user.room).emit('message', formatMessage(bot, `${user.username} has joined ${user.room} Chat`));
 
         io.to(user.room).emit('roomUsers', {
             room: user.room,
             users: allUsers(user.room)
         })
     })
-    //listen for chat message
+
     socket.on('chatMessage', (message) => {
         const user = currentUser(socket.id)
         io.to(user.room).emit('message', formatMessage(user.username, message));
@@ -35,7 +34,7 @@ io.on('connection', socket => {
         const user = userLeaves(socket.id);
 
         if (user) {
-            io.to(user.room).emit('message', formatMessage(bot, `${user.username} has just left the chat`));
+            io.to(user.room).emit('message', formatMessage(bot, `${user.username} has left ${user.room} Chat`));
             io.to(user.room).emit('roomUsers', {
                 room: user.room,
                 users: allUsers(user.room)
@@ -44,5 +43,5 @@ io.on('connection', socket => {
     });
 });
 
-const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+const PORT = process.env.PORT || 3030;
+server.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
