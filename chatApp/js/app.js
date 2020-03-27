@@ -1,5 +1,5 @@
 const chatForm = document.getElementById('chatform')
-const chatMessages = document.querySelector('.chatmessages')
+const chatMessages = document.querySelector('.chat-msgs')
 const roomName = document.getElementById('room-name');
 const friends = document.getElementById('users')
 
@@ -26,12 +26,12 @@ socket.on('message', message => {
 
 chatForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    const message = event.target.elements.msg.value;
+    const message = event.target.elements.msgInput.value;
     //emit message to server
     socket.emit('chatMessage', message)
     // clear
-    event.target.elements.msg.value = '';
-    event.target.elements.msg.focus() = '';
+    event.target.elements.msgInput.value = '';
+    event.target.elements.msgInput.focus() = '';
 })
 
 // output message to dom
@@ -40,7 +40,7 @@ function outputMessage(message) {
     div.classList.add('message');
     div.innerHTML = `<p class="meta">${message.username} <span>${message.time}</span></p>
     <p class="text">${message.text}</p>`
-    document.querySelector('.chatmessages').appendChild(div)
+    document.querySelector('.chat-msgs').appendChild(div)
 }
 
 function roomOutput(room) {

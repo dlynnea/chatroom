@@ -9,7 +9,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
-const bot = 'Chatter Bot';
+const bot = 'Chatter-Bot';
 // set static folder
 app.use(express.static(path.join(__dirname, 'chatApp')));
 
