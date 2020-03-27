@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Spartan&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Raleway&display=swap');
+
+$main-font: 'Spartan', sans-serif;
+$merriweather: 'Merriweather', 'sans-serif';
+$raleway: 'Raleway', 'sans-serif';
+$dusty-rose: #c28285;
+$background-color: rgb(228, 226, 226);
+$liberty: #474787;
+$jacksons-purple: #40407a;
+$swan-white: #f7f1e3;
+$dark-white: #dcd3bd;
+$off-white: #f5f3ee;
+$palmsprings: #218c74;
+$butternut: #ffda79;
+$grey-porcelain: #84817a;
+$devil-blue: #227093;
+$ships-officer: #2C3A47;
+$ship-officer: #89a7b4;
+$dark-color: rgb(53, 50, 50);
+$light-color: #77a39a;
+$matchy: rgba(212, 198, 198, 0.9);
+$brown: rgb(97, 92, 92);
+$bright-yarrow: #fdcb6e;
+$dupain: #60a3bc;
+$blue: #446472;
+$blue-op: #446472d2;
+$leaves: rgb(130, 152, 126);
+$light-leaves: rgba(215, 224, 213, 0.8);
+
+$show-home-image: true;
+$home-image: url('../leaves.jpg');
+$background-opacity: 0.7;
+
+
+@mixin easeOut {
+  transition: all 0.5s ease-out;
+}
+
+@mixin background {
+    @if $show-home-image {
+        &#bg-img {
+            background: $home-image;
+            background-attachment: fixed;
+            background-size: cover;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: rgba($background-color, $background-opacity);
+            }
+        }
+    }
+}
+
+// set text color
+@function set-text-color($color) {
+    @if (lightness($color) > 20) {
+        @return $blue;
+    } @else {
+        @return $dark-white;
+    }
+}
+
+//media query mixins
+
+@media (max-width: 700px) {
+	.chat-main {
+		display: block;
+	}
+
+	.chat-sidebar {
+		display: none;
+	}
+}
+
+@mixin mediaSm {
+    @media screen and (max-width: 500px) {
+        @content;
+    }
+}
+
+@mixin mediaMd {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin mediaLg {
+    @media screen and (min-width: 769px) and (max-width: 1170px) {
+        @content;
+    }
+}
+@mixin mediaXl {
+    @media screen and (min-width: 1171px) {
+        @content;
+    }
+}
