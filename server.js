@@ -4,11 +4,9 @@ const express = require('express');
 const socketio = require('socket.io');
 const formatMessage = require('./chatApp/utilities/messages')
 const { newUser, currentUser, userLeaves, allUsers } = require('./chatApp/utilities/users')
-
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
-
 const bot = 'Crafty-Bot';
 
 app.use(express.static(path.join(__dirname, 'chatApp')));
