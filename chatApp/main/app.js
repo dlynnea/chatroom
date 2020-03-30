@@ -1,5 +1,5 @@
 const chatForm = document.getElementById('chatform')
-const chatMessages = document.querySelector('.chat-msgs')
+const chatMessages = document.querySelector('.msg-list')
 const roomName = document.getElementById('room-name');
 const friends = document.getElementById('users')
 
@@ -38,7 +38,7 @@ function outputMessage(message) {
     div.classList.add('message');
     div.innerHTML = `<p class="meta">${message.username} <span>${message.time}</span></p>
     <p class="text">${message.text}</p>`
-    document.querySelector('.chat-msgs').appendChild(div)
+    document.querySelector('.msg-list').appendChild(div)
 }
 
 function roomOutput(room) {
