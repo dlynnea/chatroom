@@ -15,8 +15,8 @@ io.on('connection', socket => {
     socket.on('join', ({ username, room }) => {
         const user = newUser(socket.id, username, room)
         socket.join(user.room)
-        socket.emit('message', formatMessage(bot, 'Welcome to Craft Chat'));
-        socket.broadcast.to(user.room).emit('message', formatMessage(bot, `${user.username} has joined ${user.room} Chat`));
+        socket.emit('message', formatMessage(bot, 'Welcome to Craft Cafe'));
+        socket.broadcast.to(user.room).emit('message', formatMessage(bot, `${user.username} has joined ${user.room} Cafe`));
 
         io.to(user.room).emit('roomUsers', {
             room: user.room,
@@ -32,7 +32,7 @@ io.on('connection', socket => {
         const user = userLeaves(socket.id);
 
         if (user) {
-            io.to(user.room).emit('message', formatMessage(bot, `${user.username} has left ${user.room} Chat`));
+            io.to(user.room).emit('message', formatMessage(bot, `${user.username} has left ${user.room} Cafe`));
             io.to(user.room).emit('roomUsers', {
                 room: user.room,
                 users: allUsers(user.room)
