@@ -16,13 +16,11 @@ socket.on('roomUsers', ({ room, users}) => {
     userOutput(users);
 })
 
-// msg from server
 socket.on('message', message => {
     outputMessage(message);
     chatMessages.scrollTop = chatMessages.scrollHeight;
 })
 
-// submit message
 chatForm.addEventListener('submit', (event) => {
     event.preventDefault();
     const message = event.target.elements.msgInput.value;
@@ -32,7 +30,6 @@ chatForm.addEventListener('submit', (event) => {
     event.target.elements.msgInput.focus() = '';
 })
 
-// output message to dom
 function outputMessage(message) {
     const div = document.createElement('div')
     div.classList.add('message');
