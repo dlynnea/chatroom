@@ -7,7 +7,7 @@ const { newUser, currentUser, userLeaves, allUsers } = require('./chatApp/utilit
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
-const bot = 'Crafty-Bot';
+const bot = 'Cafe-Bot';
 
 app.use(express.static(path.join(__dirname, 'chatApp')));
 
