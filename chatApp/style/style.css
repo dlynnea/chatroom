@@ -37,13 +37,15 @@ body {
 }
 
 .layer {
-	background-color: rgba(249, 249, 245, 0.4);
+	background-color: rgba(249, 249, 245, 0.47);
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
 }
+
+/* main chat */
 
 ul {
 	list-style: none;
@@ -219,7 +221,7 @@ p {
 	background: var(--light-bg);
 }
 
-
+/* landing page/join chat */
 
 .join-container {
 	max-width: 500px;
@@ -329,6 +331,8 @@ p {
 	animation-iteration-count: 1;
 }
 
+/* button style keyframes */
+
 @-webkit-keyframes swing
 {
     15%
@@ -397,18 +401,7 @@ p {
 }
 
 
-
 /* media queries */
-
-/* @media (max-width: 700px) {
-	.main-chat {
-		display: block;
-	}
-
-	.sidebar {
-		display: none;
-	}
-} */
 
 @media (max-width: 699px) {
 
@@ -471,9 +464,6 @@ p {
 	.send-btn {
 		font-size: 12px;
 		margin: 2px;
-		/* margin-right: 0;
-		margin-bottom: 4px; */
-		/* width: 240px; */
 		width: 100%;
 		height: 36px;
 		border-radius: 4px;
@@ -491,7 +481,6 @@ p {
 	.container-form input {
 		border: none;
 		height: 38px;
-		/* max-width: 240px; */
 		width: 100%;
 		margin: 0;
 		margin-bottom: 5px;
