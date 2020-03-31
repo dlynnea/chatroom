@@ -417,6 +417,7 @@ p {
 	}
 
 	.chat-container {
+		width: 98%;
 		margin: 30px auto;
 		box-shadow: 3px 3px 3px #444;
 		border-bottom-left-radius: 4px;
@@ -481,6 +482,7 @@ p {
 
 	.container-form form {
 		margin: 0;
+		padding: 2px;
 		/* margin-top: 8px; */
 		display: flex;
 		flex-direction: column;
