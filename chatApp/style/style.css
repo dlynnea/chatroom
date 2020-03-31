@@ -463,14 +463,16 @@ p {
 		border-bottom-left-radius: 5px;
 		border-bottom-right-radius: 5px;
 		height: 100px;
+		padding: 0;
+		margin: 0;
 	}
 	
 	.send-btn {
 		font-size: 12px;
 		margin-right: 0;
 		margin-bottom: 4px;
-		width: 200px;
-		height: 38px;
+		width: 240px;
+		height: 36px;
 		border-radius: 4px;
 		flex: 1;
 	}
@@ -484,11 +486,12 @@ p {
 	}
 	
 	.container-form input {
+		border: none;
 		height: 38px;
-		max-width: 200px;
+		max-width: 240px;
 		margin: 0;
 		margin-bottom: 5px;
-		margin-top: -14px;
+		margin-top: 4px;
 		font-size: 12px;
 		padding: 5px;
 		flex: 1;
