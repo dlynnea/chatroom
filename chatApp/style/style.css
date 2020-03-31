@@ -22,6 +22,7 @@
 	--dark-blue: rgba(213, 176, 174, 0.9);
 	/* --dark-blue: rgb(182, 145, 138); */
 	--light-bg: rgb(245, 242, 242);
+	--font-reg: rgb(46, 33, 33);
 	--backlight: rgba(208, 206, 207, 0.7);
 	--success: #4b724b;
 	--error: #965755;
@@ -54,6 +55,10 @@ a {
 
 h1 {
 	margin-left: 10px;
+}
+
+p {
+	color: var(--font-reg);
 }
 
 .send-btn {
@@ -178,7 +183,7 @@ h1 {
 .msg-list .message .meta {
 	font-size: 15px;
 	font-weight: bold;
-	color: var(--dark-blue);
+	color: var(--desert-rose);
 	opacity: 0.7;
 	margin-bottom: 7px;
 }
@@ -211,6 +216,7 @@ h1 {
 	height: 46px;
 	width: 600px;
 	flex: 1;
+	border-radius: 4px;
 	background: var(--light-bg);
 }
 
