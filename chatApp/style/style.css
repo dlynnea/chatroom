@@ -109,6 +109,7 @@ p {
 	margin: 30px auto;
 	overflow: hidden;
 	box-shadow: 3px 3px 3px rgba(101, 79, 77, 0.75);
+	background: var(--backlight);
 	border-bottom-left-radius: 6px;
 	border-bottom-right-radius: 6px;
 }
@@ -148,7 +149,6 @@ p {
 	font-size: 22px;
 	margin-bottom: 15px;
 	border-bottom: 1px solid var(--light-bg);
-	/* background: var(--primary); */
 	border-radius: 4px;
 	padding: 2px;
 	padding-left: 4px;
@@ -167,7 +167,6 @@ p {
 	padding: 20px;
 	/* max-height: 500px; */
 	overflow-y: scroll;
-	background: var(--backlight);
 }
 
 .msg-list .message {
@@ -401,7 +400,7 @@ p {
 
 /* media queries */
 
-@media (max-width: 700px) {
+/* @media (max-width: 700px) {
 	.main-chat {
 		display: block;
 	}
@@ -409,25 +408,38 @@ p {
 	.sidebar {
 		display: none;
 	}
-}
+} */
 
 @media (max-width: 699px) {
 
+	/* body {
+		font-size: 1rem;
+		background: url('../images/color.jpg') no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
+		margin: 30px;
+	}
+	
+	.layer {
+		background-color: rgba(249, 249, 245, 0.4);
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	} */
+
 	.chat-container {
-		/* margin: 30px auto; */
+		margin: 30px auto;
 		box-shadow: 3px 3px 3px #444;
 		border-bottom-left-radius: 4px;
 		border-bottom-right-radius: 4px;
 		background: var(--backlight);
 	}
 
-	.msg-list {
-		background: var(--backlight);
-	}
 	.msg-list .message {
 		padding: 4px;
 		margin-bottom: 10px;
-		background-color: var(--light-bg);
 		word-wrap: break-word;
 		overflow: scroll;
 		border-radius: 14px;
@@ -435,12 +447,12 @@ p {
 	}
 
 	.msg-list .message .meta {
-		font-size: 0.8rem;
+		font-size: 0.6rem;
 	}
 
 	.main-chat {
 		width: 100%;
-		height: 320px;
+		height: 280px;
 		display: block;
 		overflow: scroll;
 	}
@@ -454,13 +466,7 @@ p {
 		padding: 4px;
 	}
 
-	.send-btn {
-		font-size: 12px;
-		height: 32px;
-		width: 200px;
-		border-radius: 4px;
-	}
-
+	
 	.container-form {
 		background-color: var(--primary);
 		border-bottom-left-radius: 5px;
@@ -468,10 +474,18 @@ p {
 		height: 110px;
 	}
 	
+	.send-btn {
+		font-size: 12px;
+		width: 200px;
+		border-radius: 4px;
+		flex: 1;
+	}
+
 	.container-form form {
+		margin: 0;
 		display: flex;
 		flex-direction: column;
-		justify-items: center;
+		align-items: center;
 	}
 	
 	.container-form input {
@@ -482,14 +496,19 @@ p {
 		margin-top: -14px;
 		font-size: 12px;
 		padding: 5px;
+		flex: 1;
 		border-radius: 4px;
 		background: var(--light-bg);
 	}
 
+	.join-main {
+
+	}
+
 	.join-container {
 		max-width: 500px;
-		height: 400px;
-		margin: 80px 10px;
+		/* height: 300px; */
+		margin: 20px 10px;
 		color: var(--backlight);
 	}
 
