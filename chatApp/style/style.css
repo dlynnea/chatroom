@@ -10,17 +10,17 @@
 }
 
 /* :root {
-	--desert-rose: rgb(140, 158, 170);
-	--dark-blue: rgb(119, 138, 151);
+	--primary: rgb(140, 158, 170);
+	--secondary: rgb(119, 138, 151);
 	--light-bg: rgb(245, 242, 242);
 	--backlight: rgba(208, 206, 207, 0.7);
 	--success: #4b724b;
 	--error: #965755;
 } */
+
 :root {
-	--desert-rose: rgb(181, 134, 131);
-	--dark-blue: rgba(213, 176, 174, 0.9);
-	/* --dark-blue: rgb(182, 145, 138); */
+	--primary: rgb(181, 134, 131);
+	--secondary: rgba(213, 176, 174, 0.9);
 	--light-bg: rgb(245, 242, 242);
 	--font-reg: rgb(46, 33, 33);
 	--backlight: rgba(208, 206, 207, 0.7);
@@ -66,12 +66,12 @@ p {
 	padding: 5px 15px;
 	margin-right: 6px;
 	background: var(--light-bg);
-	color: var(--desert-rose);
+	color: var(--primary);
 	border: 0;
 	font-size: 17px;
 	border-radius: 4px;
 	height: 46px;
-	border: 1px solid var(--desert-rose);
+	border: 1px solid var(--primary);
 }
 
 .btn {
@@ -80,7 +80,7 @@ p {
 	padding: 5px 15px;
 	margin-right: 10px;
 	background: var(--light-bg);
-	color: var(--desert-rose);
+	color: var(--primary);
 	border: 0;
 	font-size: 17px;
 }
@@ -114,7 +114,7 @@ p {
 }
 
 .chat-header {
-	background: var(--desert-rose);
+	background: var(--primary);
 	color: var(--light-bg);
 	border-top-left-radius: 4px;
 	border-top-right-radius: 4px;
@@ -132,7 +132,7 @@ p {
 }
 
 .sidebar {
-	background: var(--dark-blue);
+	background: var(--secondary);
 	color: var(--light-bg);
 	padding: 20px 20px 60px;
 	overflow-y: scroll;
@@ -148,7 +148,7 @@ p {
 	font-size: 22px;
 	margin-bottom: 15px;
 	border-bottom: 1px solid var(--light-bg);
-	/* background: var(--desert-rose); */
+	/* background: var(--primary); */
 	border-radius: 4px;
 	padding: 2px;
 	padding-left: 4px;
@@ -183,7 +183,7 @@ p {
 .msg-list .message .meta {
 	font-size: 15px;
 	font-weight: bold;
-	color: var(--desert-rose);
+	color: var(--primary);
 	opacity: 0.7;
 	margin-bottom: 7px;
 }
@@ -195,7 +195,7 @@ p {
 .container-form {
 	height: 130px;
 	padding: 20px 30px;
-	background-color: var(--desert-rose);
+	background-color: var(--primary);
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
 }
@@ -240,7 +240,7 @@ p {
 	margin-left: 90px;
 	padding: 5px 15px;
 	background: var(--light-bg);
-	color: var(--desert-rose);
+	color: var(--primary);
 	border: 0;
 	font-size: 19px;	
 	margin-top: 40px;
@@ -251,7 +251,7 @@ p {
 .join-header {
 	text-align: center;
 	padding: 20px;
-	background: var(--desert-rose);
+	background: var(--primary);
 	border-top-left-radius: 3px;
 	border-top-right-radius: 55px;
 	height: 100px;
@@ -259,7 +259,7 @@ p {
 
 .join-main {
 	background: rgba(181, 134, 131, 0.75);
-	border: 1px solid var(--desert-rose);
+	border: 1px solid var(--primary);
 	border-bottom-left-radius: 55px;
 	border-bottom-right-radius: 3px;
 }
@@ -269,7 +269,7 @@ p {
 }
 
 .join-main .form-join {
-	margin: 40px 90px;
+	margin: 40px 100px;
 	align-items: center;
 }
 
@@ -311,7 +311,7 @@ p {
 .join-footer {
 	text-align: center;
 	width: 100%;
-	background: var(--desert-rose);
+	background: var(--primary);
 	border-bottom-right-radius: 3px;
 	border-bottom-left-radius: 55px;
 	height: 100px;
@@ -460,7 +460,7 @@ p {
 	.join-container {
 		max-width: 500px;
 		height: 400px;
-		margin: 120px 10px;
+		margin: 100px 10px;
 		color: var(--backlight);
 	}
 
