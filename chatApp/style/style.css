@@ -18,14 +18,17 @@
 } */
 
 :root {
-	--primary: rgb(181, 134, 131);
+	--primary: rgba(181, 134, 131, 0.9);
 	--secondary: rgba(213, 176, 174, 0.9);
 	--light-bg: rgb(245, 242, 242);
 	--font-reg: rgb(46, 33, 33);
-	--backlight: rgba(208, 206, 207, 0.7);
+	--backlight: rgba(208, 206, 207, 0.8);
+	--backlight: rgba(213, 176, 174, 0.8);
+	--backlight: rgba(181, 134, 131, 0.8);
 	--success: #4b724b;
 	--error: #965755;
 }
+
 
 body {
 	font-size: 1rem;
@@ -110,7 +113,7 @@ p {
 	margin: 30px auto;
 	overflow: hidden;
 	box-shadow: 3px 3px 3px rgba(101, 79, 77, 0.75);
-	background: var(--backlight);
+	background: rgba(245, 242, 242, 0.8);
 	border-bottom-left-radius: 6px;
 	border-bottom-right-radius: 6px;
 }
@@ -130,11 +133,11 @@ p {
 .main-chat {
 	display: grid;
 	height: 500px;
-	grid-template-columns: 1fr 3fr;
+	grid-template-columns: 1fr 4fr;
 }
 
 .sidebar {
-	background: var(--secondary);
+	background: var(--primary);
 	color: var(--light-bg);
 	padding: 20px 20px 60px;
 	overflow-y: scroll;
@@ -149,8 +152,8 @@ p {
 .sidebar h3 {
 	font-size: 22px;
 	margin-bottom: 15px;
-	border-bottom: 1px solid var(--light-bg);
-	border-radius: 4px;
+	border-bottom: 1px dotted var(--light-bg);
+	border-top: 1px dotted var(--light-bg);
 	padding: 2px;
 	padding-left: 4px;
 }
@@ -165,7 +168,7 @@ p {
 }
 
 .msg-list {
-	padding: 20px;
+	padding: 30px;
 	overflow-y: scroll;
 }
 
@@ -173,6 +176,7 @@ p {
 	padding: 10px;
 	margin-bottom: 15px;
 	background-color: var(--light-bg);
+	border: 1px dotted var(--primary);
 	border-radius: 5px;
 	word-wrap: break-word;
 	overflow: scroll;
