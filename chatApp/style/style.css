@@ -61,6 +61,10 @@ h1 {
 	margin-left: 10px;
 }
 
+li:last-child {
+	margin-bottom: 2rem;
+}
+
 p {
 	color: var(--font-reg);
 }
@@ -81,12 +85,14 @@ p {
 .btn {
 	cursor: pointer;
 	border-radius: 4px;
-	padding: 5px 15px;
-	margin-right: 10px;
+	padding: 6px 10px;
+	margin-left: 10px;
+	margin-top: 1.3rem;
 	background: var(--light-bg);
 	color: var(--primary);
 	border: 0;
 	font-size: 17px;
+	height: 35px;
 }
 
 .btn:hover {
@@ -126,8 +132,15 @@ p {
 	padding: 15px;
 	height: 100px;
 	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	/* flex-direction: column; */
+	/* align-items: center; */
+	/* justify-content: space-between; */
+}
+
+.chat-title {
+	margin-top: 0.5rem;
+	margin-left: 11rem;
+	font-size: 2.2rem;
 }
 
 .main-chat {
@@ -141,6 +154,9 @@ p {
 	color: var(--light-bg);
 	padding: 20px 20px 60px;
 	overflow-y: scroll;
+	display: flex;
+	flex-direction: column;
+	/* justify-content: space-around; */
 }
 
 .sidebar h2 {

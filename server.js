@@ -15,8 +15,9 @@ io.on('connection', socket => {
     socket.on('join', ({ username, room }) => {
         const user = newUser(socket.id, username, room)
         socket.join(user.room)
-        socket.emit('message', formatMessage(bot, 'Welcome to Craft Cafe'));
-        socket.broadcast.to(user.room).emit('message', formatMessage(bot, `${user.username} has joined ${user.room} Cafe`));
+        socket.emit('message', formatMessage(bot, `Hi ${user.username}, welcome to Craft Cafe`));
+        socket.emit('message', formatMessage(bot, `You have joined the ${user.room} chat`));
+        socket.broadcast.to(user.room).emit('message', formatMessage(bot, `${user.username} has joined you in ${user.room} Cafe`));
 
         io.to(user.room).emit('roomUsers', {
             room: user.room,
